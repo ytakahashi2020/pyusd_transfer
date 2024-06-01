@@ -1,0 +1,29 @@
+{
+  "address": "GgdnfN8T6aNLweCjzZiPoc5jtrgm23Pt5MsXa6N46a5f",
+  "version": "0.1.0",
+  "name": "splitter",
+  "instructions": [
+    {
+      "name": "sendToAll",
+      "accounts": [
+        { "name": "from", "isMut": true, "isSigner": false },
+        { "name": "authority", "isMut": false, "isSigner": true },
+        { "name": "mint", "isMut": false, "isSigner": false },
+        { "name": "tokenProgram", "isMut": false, "isSigner": false }
+      ],
+      "args": [{ "name": "amounts", "type": { "vec": "u64" } }]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "InvalidTokenAccount",
+      "msg": "Invalid Token Account. Please ensure the account is correctly initialized."
+    },
+    {
+      "code": 6001,
+      "name": "MismatchedRecipientAmounts",
+      "msg": "The number of recipient accounts does not match the number of amounts provided."
+    }
+  ]
+}
